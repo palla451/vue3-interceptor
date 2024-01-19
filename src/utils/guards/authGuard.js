@@ -3,7 +3,7 @@ import { checkAuthentication } from '@/services/authService';
 export const requireAuth = async (to, from, next) => {
     try {
         const isAuthenticated = await checkAuthentication();
-
+        console.log(isAuthenticated);
         if (to.meta.requiresAuth) {
             if (isAuthenticated) {
                 next();
